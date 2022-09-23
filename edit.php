@@ -30,6 +30,12 @@ $product = $stmt->fetch();
         ]; ?>">
         <input type="file" name="afbeelding" required value="<?php echo $product[
             'afbeelding'
+        ]; ?>"><br>
+        <input type="number" name="inhoud" required value="<?php echo $product[
+            'inhoud'
+        ]; ?>">
+        <input type="number" name="artikelnummer" required value="<?php echo $product[
+            'artikelnummer'
         ]; ?>">
         <input type="submit" name="edit" required value="edit">
     </form>
@@ -39,14 +45,18 @@ $product = $stmt->fetch();
         $product = $_POST['product'];
         $price = $_POST['price'];
         $afbeelding = $_POST['afbeelding'];
+        $inhoud = $_POST['inhoud'];
+        $artikelnummer = $_POST['artikelnummer'];
         $sql =
-            'UPDATE producten SET product = :product, price = :price, afbeelding = :afbeelding WHERE id = :id';
+            'UPDATE producten SET product = :product, price = :price, afbeelding = :afbeelding, inhoud = :inhoud, artikelnummer = :artikelnummer WHERE id = :id';
         $stmt = $connect->prepare($sql);
         $stmt->execute([
             'id' => $id,
             'product' => $product,
             'price' => $price,
             'afbeelding' => $afbeelding,
+            'inhoud' => $inhoud,
+            'artikelnummer' => $artikelnummer,
         ]);
     }
 

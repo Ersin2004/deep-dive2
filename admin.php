@@ -53,7 +53,6 @@ function userIsAdmin($connect)
         <tr>
             <th>Product</th>
             <th>Prijs</th>
-
         </tr>
        
         <?php
@@ -82,41 +81,52 @@ function userIsAdmin($connect)
                     '</td></tr>';
                 echo "<td><img class='asd' src=" .
                     $row['afbeelding'] .
-                    '></td>';
+                    '>';
+                echo '<td>Liter' . $row['inhoud'] . '<tr></td>';
+                echo '<td>Artikelnummer: <br>' . $row['artikelnummer'] . '<tr></td>';
                 ?>
                 <td class="producten-delete">
                     <form action="admin.php" method="post">
-                        <input type="hidden" name="id" value="<?php echo $row[
+                    <input type="hidden" name="id" value="<?php echo $row[
                             'id'
                         ]; ?>
                         ">
                         <input type="submit" name="delete" value="Delete">
-                    </form>
+                        </form>
                 <button class="edit" onclick="window.location.href='edit.php/<?php echo $row[
                     'id'
                 ]; ?>'">Edit</button>
-                </td> 
-
-
+                </td>
 <?php
             }
         } else {
             echo '0 results';
         }
         ?> 
-    </table> 
-    <button class="add" onclick="window.location.href='add.php'">Add</button>
+    </table> <br>
+    <button class="add" onclick="window.location.href='add.php'">Add Koelkast</button>
 </body>
 
 
 <div class="footer">
-    
+
+    <a href="reperaties.php" class="info">Reperaties</a> 
+
     <a href="admin.php" class="info">Home</a>
     <a href="about.php" class="info">About</a>
     <a href="contact.php" class="info">Contact</a>
 </div>
 
 <style> 
+.bottom-right {
+    text - align: center;
+    position: absolute;
+    bottom: 50px;
+    right : 55px;
+    font-size: 20px;
+    color : white;
+}
+    
 body{
     background-color: rgb(112, 159, 165);
     color: white;
@@ -145,6 +155,7 @@ body{
     font-size: 20px;
     padding: 10px;
 }
+
 .asd {
     width:100px;
     height:100px;

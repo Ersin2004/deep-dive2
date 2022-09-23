@@ -13,16 +13,13 @@ $charset = 'utf8mb4';
 
 <body>    
     <h1>Bob Vance inc.</h1>
-    <p>Koop de mooiste koelkasten met de beste kwaliteit van Bob Vance inc.</p>   
-   
-   
+    <p>Koop de beste kwaliteit koelkasten van Bob Vance inc.</p><br>
 
     <table>
         <tr>
             <th>Product</th>
             <th>Prijs</th>
         </tr>
-       
         <?php
         $connect = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
         $sql = 'SELECT * FROM producten';
@@ -46,10 +43,7 @@ $charset = 'utf8mb4';
             echo '0 results';
         }
         ?> 
-    </table> 
-</body>
-
-
+    </table>
 </body>
 </div>
     <a href="login.php"><img src="images/login.png" class="login" alt="Login" style="width:100px;height:70px;"></a>
@@ -66,12 +60,24 @@ body{
     background-color: rgb(112, 159, 165);
     color: white;
 }
-.login{
-     position:absolute;
-    top:0;
-    right:10;
+table {
+    border-collapse: collapse;
+    width: 100%;
+    color: #ffffff;
+    font-family: monospace;
+    font-size: 25px;
+    text-align: left;
 }
-
+th {
+    background-color: #588c7e;
+    color: white;
+}
+.login{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+}
 .footer {
     position: fixed;
     left: 0;
@@ -87,11 +93,9 @@ body{
 .info{
     color: white;
     text-decoration: none;
-    font-size: 20px;
-    padding: 10px;
+    margin: 10px;
 }
-.asd {
-    width:100px;
-    height:100px;
-
+.asd{
+    width: 100px;
+    height: 100px;
 }

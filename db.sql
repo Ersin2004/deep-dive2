@@ -22,11 +22,22 @@ id int not null auto_increment,
 product varchar(255) not null,
 price int not null,
 afbeelding varchar(255) not null,
+inhoud varchar(255) not null,
+artikelnummer varchar(255) not null,
 primary key(id)
 );
 
-insert into producten(product, price, afbeelding) values('Samsung Smart fridge',  1000, 'fridge.png');
-insert into producten(product, price, afbeelding) values('LG Smart fridge',  2000, 'fridge.png');
-insert into producten(product, price, afbeelding) values('Bosch Smart fridge',  3000, 'fridge.png');
-insert into producten(product, price, afbeelding) values('Siemens Smart fridge',  4000, 'fridge.png');
+create table reperaties(
+id int not null auto_increment,
+product_id int not null,
+user_id int not null,
+reperatie varchar(255) not null,
+primary key(id),
+foreign key(product_id) references producten(id),
+foreign key(user_id) references users(id)
+);
+
+
+insert into producten(product, price, afbeelding, inhoud, artikelnummer) values('bosh', 2111, 'fridge.png', 33, 1125124);
+insert into producten(product, price, afbeelding, inhoud, artikelnummer) values('Samsung', 2142, 'fridge.png', 53, 137580);
 insert into users(username, password) values('admin', 'admin');

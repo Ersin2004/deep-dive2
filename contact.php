@@ -18,9 +18,21 @@
     <a href="about.php" class="info">About</a>
     <a href="contact.php" class="info">Contact</a>
 </div>
-<style>
 
-    
+write a text about the company and the products
+<h2>
+Bob Vance is een 
+
+
+</body>
+</html>
+
+
+<style>
+content{
+    text-align: center;
+
+}
     body{
         background-color: rgb(112, 159, 165);
         color: white;
@@ -30,9 +42,6 @@ p {
 }
 h1 {
     font-size: 40px;
-}
-.cta{
-    font-size: 20px;
 }
 .footer {
     position: fixed;

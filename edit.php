@@ -15,7 +15,7 @@ $product = $stmt->fetch();
 ?> 
 <html> 
 <body>    
-     <h1><a href="../index.php">Bob Vance inc.</a></h1>
+     <h1><a href="index.php">Bob Vance inc.</a></h1>
 
     <p>Edit</p>   
     <form action="../update.php" method="post">
@@ -49,11 +49,38 @@ $product = $stmt->fetch();
             'afbeelding' => $afbeelding,
         ]);
     }
-    if (!isset($_SESSION['loggedin'])) {
-        header('Location: login.php');
-        exit();
-    }
+
     ?>
+    <div class="footer">
     
+    <a href="../admin.php" class="info">Home</a>
+    <a href="../about.php" class="info">About</a>
+    <a href="../contact.php" class="info">Contact</a>
+</div>
+    <style>
+body{
+    background-color: rgb(112, 159, 165);
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px; 
+}
+.info{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px;
+}
+
+
+</style>
 </body>
 </html>

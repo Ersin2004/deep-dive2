@@ -21,7 +21,6 @@
     <a href="about.php" class="info">About</a>
     <a href="contact.php" class="info">Contact</a>
 </div>
-<a class="cta" href="index.php">Home</a>
 <style>
     .column {
         float: left;
@@ -32,9 +31,6 @@
         font-size: 30px;
     }
     p {
-        font-size: 20px;
-    }
-    .cta {
         font-size: 20px;
     }
     body {
